@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+
+    <link rel="stylesheet" href="./global.css" />
+    <link rel="stylesheet" href="./index.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Urbanist:wght@500;600;700;800&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=IBM Plex Sans:wght@400;500&display=swap"
+    />
+    <style>
+      .body-icon,
+.d-asset-1 {
+  position: absolute;
+  object-fit: cover;
+}
+.d-asset-1 {
+  top: calc(50% - 450px);
+  left: calc(50% - 169px);
+  width: 1747px;
+  height: 1747px;
+}
+.body-icon {
+  top: 0;
+  left: 0;
+  width: 1109px;
+  height: 1109px;
+}
+.monotone54-telephone-icon {
+  position: relative;
+  width: 24px;
+  height: 24px;
+}
+.icon {
+  border-radius: var(--br-1215xl);
+  background-color: var(--mindful-gray-10);
+  display: flex;
+  flex-direction: row;
+  padding: var(--padding-5xs);
+  align-items: center;
+  justify-content: flex-start;
+}
+.doctor-khan-phone {
+  position: relative;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 800;
+}
+.tag,
+.tags {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+.tag {
+  border-radius: var(--br-104xl);
+  background-color: var(--mindful-gray-white);
+  padding: var(--padding-5xs) var(--padding-xs);
+  align-items: center;
+  gap: var(--gap-3xs);
+}
+.tags {
+  position: absolute;
+  top: 488px;
+  left: 414px;
+  align-items: flex-start;
+  gap: var(--gap-5xs);
+}
+.iphone-space-black-front {
+  position: absolute;
+  top: 77px;
+  left: 481px;
+  box-shadow: 991px 991px 392px transparent,
+    634px 634px 359px rgba(75, 51, 37, 0.04),
+    357px 357px 303px rgba(75, 51, 37, 0.13),
+    158px 158px 224px rgba(75, 51, 37, 0.21),
+    40px 40px 123px rgba(75, 51, 37, 0.25), 0 0 0 rgba(75, 51, 37, 0.25);
+  width: 1109px;
+  height: 1109px;
+  overflow: hidden;
+  display: none;
+}
+.psyche {
+  position: relative;
+  border-radius: var(--br-1215xl);
+  background-color: var(--mindful-gray-60);
+  width: 8px;
+  height: 8px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.label-fill,
+.label-plain {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.label-plain {
+  flex-direction: row;
+  gap: var(--gap-7xs);
+}
+.label-fill {
+  border-radius: var(--br-1215xl);
+  background-color: var(--mindful-gray-20);
+  flex-direction: column;
+  padding: var(--padding-3xs) var(--padding-xs);
+  color: var(--mindful-gray-60);
+}
+.marker-icon {
+  position: absolute;
+  height: 10.54%;
+  width: 82.24%;
+  top: 91.08%;
+  right: 20.88%;
+  bottom: -1.62%;
+  left: -3.12%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+.assess-your {
+  margin: 0;
+}
+.ai-chat-bot {
+  margin: 0;
+  color: var(--color-coral);
+}
+.heading1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  letter-spacing: -0.04em;
+  line-height: 80px;
+  display: inline-block;
+  width: 448px;
+}
+.heading {
+  position: relative;
+  height: 240px;
+}
+.heading,
+.text1,
+.text2 {
+  align-self: stretch;
+}
+.text2 {
+  position: relative;
+  font-size: var(--paragraph-xl-size);
+  letter-spacing: -0.01em;
+  line-height: 160%;
+  font-weight: 500;
+  color: var(--mindful-gray-100-alpha-64);
+}
+.text1 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--gap-5xl);
+  font-size: var(--font-size-53xl);
+}
+.text3 {
+  position: relative;
+  letter-spacing: -0.02em;
+}
+.button-icon,
+.button-primary {
+  align-items: center;
+  justify-content: center;
+}
+.button-primary {
+  border-radius: var(--br-981xl);
+  border: 1px solid var(--mindful-gray-80);
+  box-sizing: border-box;
+  height: 64px;
+  display: flex;
+  flex-direction: column;
+  padding: var(--padding-base) var(--padding-13xl);
+}
+.button-icon {
+  border-radius: var(--br-1215xl);
+  background-color: var(--mindful-gray-white);
+  width: 48px;
+  height: 48px;
+}
+.button-icon,
+.button-secondary,
+.content {
+  display: flex;
+  flex-direction: row;
+}
+.button-secondary {
+  border-radius: var(--br-981xl);
+  background-color: var(--serenity-green-50);
+  height: 64px;
+  padding: var(--padding-base) var(--padding-5xs) var(--padding-base)
+    var(--padding-base);
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: center;
+  gap: var(--gap-13xl);
+  color: var(--mindful-gray-white);
+}
+.content {
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--gap-5xs);
+  font-size: var(--text-lg-semibold-size);
+}
+.col,
+.gradient {
+  position: absolute;
+}
+.col {
+  top: calc(50% - 261px);
+  left: 135px;
+  width: 458px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--gap-29xl);
+  font-size: var(--label-sm-size);
+}
+.gradient {
+  top: 801px;
+  left: 0;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0), #fff);
+  width: 1440px;
+  height: 99px;
+}
+.header-desktop-v1-child {
+  position: absolute;
+  top: 26px;
+  left: 1392px;
+}
+.main-menu {
+  position: relative;
+  letter-spacing: -0.02em;
+  font-weight: 600;
+}
+.psyche1 {
+  position: relative;
+  border-radius: var(--br-1215xl);
+  background-color: var(--mindful-gray-60);
+  width: 12px;
+  height: 12px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.content2 {
+  position: absolute;
+  top: calc(50% - 11px);
+  left: 1285px;
+  display: none;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: var(--gap-5xs);
+}
+.freudai-icon,
+.logomark-icon {
+  position: relative;
+  width: 36px;
+  height: 36px;
+}
+.freudai-icon {
+  width: 102px;
+  height: 26px;
+}
+.logo {
+  position: absolute;
+  top: calc(50% - 18px);
+  left: calc(50% - 75px);
+  display: none;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: var(--gap-xs);
+}
+.vector,
+.vector1 {
+  position: absolute;
+  border: 2px solid var(--mindful-gray-80);
+  box-sizing: border-box;
+}
+.vector {
+  height: 66.67%;
+  width: 83.33%;
+  top: 16.67%;
+  right: 8.33%;
+  bottom: 16.67%;
+  left: 8.33%;
+  border-radius: var(--br-1215xl);
+}
+.vector1 {
+  height: 58.33%;
+  width: 58.33%;
+  top: -4.17%;
+  right: 20.83%;
+  bottom: 45.83%;
+  left: 20.83%;
+  border-radius: 50%;
+}
+.monotone46-email-1 {
+  position: absolute;
+  top: calc(50% - 12px);
+  left: calc(50% - 12px);
+  width: 24px;
+  height: 24px;
+}
+.button-icon1 {
+  background-color: var(--mindful-gray-white);
+}
+.button-icon1,
+.button-icon2 {
+  position: relative;
+  border-radius: var(--br-981xl);
+  width: 64px;
+  height: 64px;
+}
+.icons {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  display: none;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--gap-5xs);
+}
+.content1 {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  border-radius: var(--br-1215xl);
+  background-color: var(--mindful-gray-10);
+  width: 1408px;
+  height: 80px;
+}
+.header-desktop-v1 {
+  position: absolute;
+  top: 0;
+  left: calc(50% - 720px);
+  width: 1440px;
+  height: 96px;
+  overflow: hidden;
+  font-size: var(--text-lg-semibold-size);
+}
+.home,
+.sign-up {
+  position: relative;
+}
+.home {
+  font-weight: 500;
+  background: linear-gradient(180deg, #ffc4ab, #fedacb 0.01%, #fe814b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  z-index: 0;
+}
+.sign-up {
+  z-index: 1;
+}
+.about-us,
+.contact-us {
+  position: relative;
+  z-index: 2;
+}
+.contact-us {
+  z-index: 3;
+}
+.frame-child {
+  position: absolute;
+  margin: 0 !important;
+  top: 33px;
+  left: -1px;
+  width: 73px;
+  height: 2px;
+  z-index: 4;
+}
+.home-parent {
+  position: absolute;
+  top: 36px;
+  right: 48px;
+  width: 672px;
+  height: 32px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--gap-71xl);
+  font-size: var(--font-size-7xl);
+  color: var(--color-darkslategray);
+  font-family: var(--font-ibm-plex-sans);
+}
+.image-6-icon,
+.image-7-icon {
+  position: absolute;
+  top: 70px;
+  object-fit: cover;
+}
+.image-6-icon {
+  left: 405px;
+  width: 1227px;
+  height: 855px;
+  display: none;
+}
+.image-7-icon {
+  left: 373px;
+  width: 1292px;
+  height: 891px;
+}
+.homepage-desktop,
+.homepage-hero {
+  position: relative;
+  background-color: var(--mindful-gray-white);
+  overflow: hidden;
+}
+.homepage-hero {
+  width: 1440px;
+  height: 900px;
+  flex-shrink: 0;
+}
+.homepage-desktop {
+  border-radius: 56px;
+  width: 100%;
+  height: 926px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  text-align: left;
+  font-size: var(--label-md-size);
+  color: var(--mindful-gray-80);
+  font-family: var(--paragraph-xl);
+}
+body {
+  margin: 0;
+  line-height: normal;
+}
+
+:root {
+  /* fonts */
+  --font-ibm-plex-sans: "IBM Plex Sans";
+  --paragraph-xl: Urbanist;
+
+  /* font sizes */
+  --font-size-7xl: 26px;
+  --text-lg-semibold-size: 18px;
+  --paragraph-xl-size: 20px;
+  --font-size-53xl: 72px;
+  --label-sm-size: 12px;
+  --label-md-size: 14px;
+
+  /* Colors */
+  --mindful-gray-white: #fff;
+  --color-darkslategray: #0d2b46;
+  --mindful-gray-10: #f7f4f2;
+  --mindful-gray-80: #4b3425;
+  --mindful-gray-60: #926247;
+  --serenity-green-50: #9bb068;
+  --mindful-gray-100-alpha-64: rgba(31, 22, 15, 0.64);
+  --color-coral: #fe814b;
+  --mindful-gray-20: #e8ddd9;
+
+  /* Gaps */
+  --gap-71xl: 90px;
+  --gap-5xs: 8px;
+  --gap-xs: 12px;
+  --gap-29xl: 48px;
+  --gap-13xl: 32px;
+  --gap-5xl: 24px;
+  --gap-7xs: 6px;
+  --gap-3xs: 10px;
+
+  /* Paddings */
+  --padding-base: 16px;
+  --padding-5xs: 8px;
+  --padding-13xl: 32px;
+  --padding-3xs: 10px;
+  --padding-xs: 12px;
+
+  /* Border radiuses */
+  --br-1215xl: 1234px;
+  --br-981xl: 1000px;
+  --br-104xl: 123px;
+}
+    </style>
+  </head>
+  <body>
+    <div class="homepage-desktop">
+      <div class="homepage-hero">
+        <img class="d-asset-1" alt="" src="./3d-asset-1@2x.png" />
+
+        <div class="iphone-space-black-front">
+          <img class="body-icon" alt="" src="./public/body@2x.png" />
+
+          <img class="body-icon" alt="" src="./public/screen@2x.png" />
+
+          <div class="tags">
+            <div class="tag">
+              <div class="icon">
+                <img
+                  class="monotone54-telephone-icon"
+                  alt=""
+                  src="./public/monotone54telephone.svg"
+                />
+              </div>
+              <div class="doctor-khan-phone">Doctor Khan Phone</div>
+            </div>
+            <div class="tag">
+              <div class="icon">
+                <img
+                  class="monotone54-telephone-icon"
+                  alt=""
+                  src="./public/monotone51location1.svg"
+                />
+              </div>
+              <div class="doctor-khan-phone">Physical Address</div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="label-fill">
+            <div class="label-plain">
+              <div class="psyche"></div>
+              <div class="doctor-khan-phone">Know your body</div>
+            </div>
+          </div>
+          <div class="text1">
+            <div class="heading">
+              <img class="marker-icon" alt="" src="./public/marker.svg" />
+
+              <b class="heading1">
+                <p class="assess-your">Assess your</p>
+                <p class="assess-your">Prakriti using</p>
+                <p class="ai-chat-bot">AI Chat-bot</p>
+              </b>
+            </div>
+            <div class="text2">
+              Step into a world of cutting-edge technology and compassionate
+              care, tailored to your unique needs.
+            </div>
+          </div>
+          <div class="content">
+            <div class="button-primary">
+              <b class="text3">About</b>
+            </div>
+            <div class="button-secondary">
+              <form action="/home" method="post">
+             <button> <b class="text3">Take the test</b></button>
+            </form>
+              <div class="button-icon">
+                <!-- <img
+                  class="monotone54-telephone-icon"
+                  alt=""
+                  src="./public/monotone04arrowrightsm.svg"
+                /> -->
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="gradient"></div>
+        <div class="header-desktop-v1">
+          <div class="header-desktop-v1-child"></div>
+          <div class="content1">
+            <div class="content2">
+              <div class="main-menu">Main Menu</div>
+              <div class="psyche1"></div>
+            </div>
+            <div class="logo">
+              <img class="logomark-icon" alt="" src="./public/logomark.svg" />
+
+              <img class="freudai-icon" alt="" src="./public/freudai.svg" />
+            </div>
+            <div class="icons">
+              <div class="button-icon1">
+                <div class="monotone46-email-1">
+                  <div class="vector"></div>
+                  <div class="vector1"></div>
+                </div>
+              </div>
+              <img class="button-icon2" alt="" src="./public/button-icon.svg" />
+            </div>
+          </div>
+        </div>
+        <div class="home-parent">
+          <div class="home">Home</div>
+          <div class="sign-up">Sign Up</div>
+          <div class="about-us">About Us</div>
+          <div class="contact-us">Contact Us</div>
+          <img class="frame-child" alt="" src="./public/vector-8.svg" />
+        </div>
+        <img class="image-6-icon" alt="" src="./public/image-6@2x.png" />
+
+        <img class="image-7-icon" alt="" src="/image 7.png" />
+      </div>
+    </div>
+  </body>
+</html>

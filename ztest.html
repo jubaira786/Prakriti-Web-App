@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        /* Reset some default styles to ensure consistency */
+        body, h1, p {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Overall styling for the body */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0; /* Background color for the entire page */
+            text-align: center;
+        }
+
+        /* Chat bubble container style */
+        .chat-bubble {
+            background-color: #007BFF; /* Background color for chat bubbles */
+            color: #fff; /* Text color for chat bubbles */
+            max-width: 80%; /* Max width for the chat bubble container */
+            margin: 20px auto; /* Center-align chat bubbles with some margin */
+            padding: 10px 20px; /* Padding inside the chat bubble */
+            border-radius: 10px; /* Rounded corners for the chat bubble */
+            display: inline-block; /* Display as inline block for chat bubbles */
+        }
+
+        /* Page title styling */
+        h1 {
+            font-size: 24px;
+            color: #333; /* Text color for headings */
+            margin-top: 20px;
+        }
+
+        /* Paragraph styling */
+        p {
+            font-size: 16px;
+            color: #666; /* Text color for paragraphs */
+        }
+
+        /* Image styling */
+        img {
+            max-width: 100%; /* Ensure images don't overflow their containers */
+            height: auto;
+            margin: 20px 0; /* Add space above and below images */
+        }
+    </style>
+    <title>Bar Graph</title>
+</head>
+
+<body>
+    <!-- Chat-like chat bubble container for content -->
+    <div class="chat-bubble">
+        <h1>Tiridosha Theory</h1>
+        <img src="/barChart.png" alt="">
+    </div>
+    <!-- Chat-like chat bubble container for content -->
+    <div class="chat-bubble">
+        <h1>${header}</h1>
+        <p>${headerdef}</p>
+        <p>${myVariable}</p>
+        <img src=${img} alt="">
+    </div>
+</body>
+
+</html>

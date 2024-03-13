@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Questionnaire</title>
+    <!-- Add this script tag to include Chart.js -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+<body>
+    <form action="/submit" method="post">
+        <h3>Question 1</h3>
+        <label>
+            A. <input type="radio" name="q1" value="A"> pri
+        </label>
+        <label>
+            B. <input type="radio" name="q1" value="B"> hijkn
+        </label>
+        <label>
+            C. <input type="radio" name="q1" value="C"> ihkj,
+        </label>
+
+        <h3>Question 2</h3>
+        <label>
+            A. <input type="radio" name="q2" value="A"> ijk
+        </label>
+        <label>
+            B. <input type="radio" name="q2" value="B"> oijl
+        </label>
+        <label>
+            C. <input type="radio" name="q2" value="C"> ikl
+        </label>
+
+        <h3>Question 3</h3>
+        <label>
+            A. <input type="radio" name="q3" value="A"> uhkj
+        </label>
+        <label>
+            B. <input type="radio" name="q3" value="B">iujk
+        </label>
+        <label>
+            C. <input type="radio" name="q3" value="C"> uhyjk
+        </label>
+
+        <br>
+        <!--  -->
+        <h3>Question 4</h3>
+        <label>
+            A. <input type="radio" name="q4" value="A"> uhkj
+        </label>
+        <label>
+            B. <input type="radio" name="q4" value="B">iujk
+        </label>
+        <label>
+            C. <input type="radio" name="q4" value="C"> uhyjk
+        </label>
+
+        <br>
+
+        <input type="submit" value="Submit">
+
+        
+    </form>
+    <canvas id="chartCanvas"></canvas>
+
+    <!-- Include your client-side chart rendering script -->
+    <script src="/chart.js"></script>
+</body>
+</html>

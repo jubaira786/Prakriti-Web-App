@@ -1,0 +1,480 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Questionnaire</title>
+    <!-- Add this script tag to include Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- <link rel="stylesheet" type="text/css" href="./style.css"> -->
+    <style>
+        .qno {
+    font-size: 25px;
+}
+
+.cont {
+    background-color: hwb(0 95% 5%);
+    /* width: 80%; */
+    margin-bottom: 20px;
+    align-items: center;
+    border-radius: 5px;
+    border: 1px solid #aabdd2;
+    padding:  24px;
+}
+
+body, h1, h2, h3, label {
+    padding: 0;
+}
+
+/* Set a background color and font styles for the entire page */
+body {
+    display: flex;
+    flex-direction: column;
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+    /* display: flex; */
+    /* justify-content: center; */
+    /* align-items: center; */
+    /* height: 100vh; */
+    /* margin: 0; */
+    width: 100%;
+}
+
+.imgh {
+    align-self: center;
+}
+
+/* Center the form on the page */
+form {
+    /* max-width: 800px; */
+    margin: 0 auto;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
+    margin-top: 10px;
+    width: 800px;
+}
+
+/* Style form headers */
+h3 {
+    font-size: 18px;
+    margin-top: 15px;
+}
+
+/* Style radio buttons and labels */
+label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+input[type="radio"] {
+    margin-right: 5px;
+}
+
+/* Style submit button */
+input[type="submit"] {
+    display: flex;
+    /* flex-direction: column; */
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    /* align-self: center; */
+}
+
+input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+/* Style the canvas for the chart */
+#chartCanvas {
+    display: block;
+    margin-top: 30px;
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+}
+
+/* Style the chart's container (if needed) */
+.chart-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Add media queries for responsiveness if necessary */
+@media screen and (max-width: 768px) {
+    form {
+        padding: 10px;
+    }
+
+    h3 {
+        font-size: 16px;
+    }
+
+    input[type="submit"] {
+        margin-top: 15px;
+    }
+}
+
+    </style>
+</head>
+
+<body>
+    <img src="/vedicbal.jpg" alt="prakriti" class="imgh">
+    <form action="/submit" method="post">
+        <div class="cont">
+            <h3 class="qno">Body Frame</h3>
+            <br>
+            <label>
+                A. <input type="radio" name="q1" value="A"> Thin and Lean
+            </label>
+            <label>
+                B. <input type="radio" name="q1" value="B"> Medium
+            </label>
+            <label>
+                C. <input type="radio" name="q1" value="C"> Well Built,
+            </label>
+        </div>
+
+        <div class="cont">
+            <h3 class="qno">Hair Type</h3><br>
+            <label>
+                A. <input type="radio" name="q2" value="A"> Dry and With Split Ends
+            </label>
+            <label>
+                B. <input type="radio" name="q2" value="B"> Normal, Thin, More Hair fall
+            </label>
+            <label>
+                C. <input type="radio" name="q2" value="C"> Greasy,Heavy
+            </label>
+        </div>
+
+        <div class="cont">
+            <h3 class="qno">Skin type</h3><br>
+            <label>
+                A. <input type="radio" name="q3" value="A"> Dry, Rough
+            </label>
+            <label>
+                B. <input type="radio" name="q3" value="B">Soft, More Sweating, Acne
+            </label>
+            <label>
+                C. <input type="radio" name="q3" value="C"> Moist, Greasy
+            </label>
+        </div>
+
+        <div class="cont">
+            <h3 class="qno">Skin Complexion</h3><br>
+            <label>
+                A. <input type="radio" name="q4" value="A"> Dark, Blackish
+            </label>
+            <label>
+                B. <input type="radio" name="q4" value="B">Pinkish, Shiny
+            </label>
+            <label>
+                C. <input type="radio" name="q4" value="C"> Glowing, White
+            </label>
+        </div>
+
+        <div class="cont">
+            <h3 class="qno">Body weight</h3><br>
+            <label>
+                A. <input type="radio" name="q5" value="A"> Low, Difficult to Put on Weight
+            </label>
+            <label>
+                B. <input type="radio" name="q5" value="B">Medium, Can Easily Lose or Gain Weight
+            </label>
+            <label>
+                C. <input type="radio" name="q5" value="C"> Overweight, Difficult to Lose Weight
+            </label>
+        </div>
+
+        <div class="cont">
+            <h3 class="qno">Nail Type</h3><br>
+            <label>
+                A. <input type="radio" name="q6" value="A"> Blackish, Small, Brittle
+            </label>
+            <label>
+                B. <input type="radio" name="q6" value="B"> Reddish, Small
+            </label>
+            <label>
+                C. <input type="radio" name="q6" value="C"> Pinkish,  Big, Smooth
+            </label>
+        </div>
+
+        <div class="cont">
+            <h3 class="qno">Size and color of your teeth</h3><br>
+            <label>
+                A. <input type="radio" name="q7" value="A"> Very Big or Very Small, Irregular, Blackish
+            </label>
+            <label>
+                B. <input type="radio" name="q7" value="B">Medium Sized, Yellowish
+            </label>
+            <label>
+                C. <input type="radio" name="q7" value="C">  Large, Shinning White
+            </label>
+        </div>
+
+        <div class="cont">
+            <h3 class="qno">Pace of performing work</h3><br>
+            <label>
+                A. <input type="radio" name="q8" value="A">  Fast, Always in Hurry
+            </label>
+            <label>
+                B. <input type="radio" name="q8" value="B">Medium, Energetic
+            </label>
+            <label>
+                C. <input type="radio" name="q8" value="C"> Slow, Steady
+            </label>
+        </div>
+
+        <div class="cont">
+            <h3 class="qno">Mental Activity</h3><br>
+            <label>
+                A. <input type="radio" name="q9" value="A"> Quick, Restless
+            </label>
+            <label>
+                B. <input type="radio" name="q9" value="B">Smart Intellect, Aggressive
+            </label>
+            <label>
+                C. <input type="radio" name="q9" value="C"> Calm, Stable
+            </label>
+        </div>
+
+        <div class="cont">
+            <h3 class="qno">Memory Power</h3><br>
+            <label>
+                A. <input type="radio" name="q10" value="A"> Short Term Bad
+            </label>
+            <label>
+                B. <input type="radio" name="q10" value="B">Good Memory
+            </label>
+            <label>
+                C. <input type="radio" name="q10" value="C"> Long Term Best
+            </label>
+        </div>
+
+        <div class="cont">
+            <h3 class="qno">Sleep Pattern</h3><br>
+            <label>
+                A. <input type="radio" name="q11" value="A"> Interrupted, Less
+            </label>
+            <label>
+                B. <input type="radio" name="q11" value="B">Moderate
+            </label>
+            <label>
+                C. <input type="radio" name="q11" value="C"> Sleepy, Lazy
+            </label>
+        </div>
+
+        <div class="cont">
+            <h3 class="qno">Weather Preference</h3><br>
+            <label>
+                A. <input type="radio" name="q12" value="A"> Dislike Cold
+            </label>
+            <label>
+                B. <input type="radio" name="q12" value="B">Dislike Heat
+            </label>
+            <label>
+                C. <input type="radio" name="q12" value="C"> Dislike Moist, Rainy and Cool Weather
+            </label>
+        </div>
+
+        <div class="cont">
+            <h3 class="qno">Reaction Under Adverse</h3><br>
+            <label>
+                A. <input type="radio" name="q13" value="A"> Anxiety, Worry, Irritability
+            </label>
+            <label>
+                B. <input type="radio" name="q13" value="B">Anger, Aggression
+            </label>
+            <label>
+                C. <input type="radio" name="q13" value="C"> Calm, Reclusive, Sometimes Depressive
+            </label>
+        </div>
+
+        <div class="cont">
+            <h3 class="qno">Change of Mood</h3><br>
+            <label>
+                A. <input type="radio" name="q14" value="A"> Changes Quickly have Frequent Mood Swings
+            </label>
+            <label>
+                B. <input type="radio" name="q14" value="B">Changes Slowly
+            </label>
+            <label>
+                C. <input type="radio" name="q14" value="C"> Stable Constant
+            </label>
+        </div>
+
+        <div class="cont">
+            <h3 class="qno">Eating Habit</h3><br>
+            <label>
+                A. <input type="radio" name="q15" value="A"> Eats Quickly Without Chewing Properly
+            </label>
+            <label>
+                B. <input type="radio" name="q15" value="B">Eats at a Moderate Speed
+            </label>
+            <label>
+                C. <input type="radio" name="q15" value="C"> Chews Food Properly
+            </label>
+        </div>
+
+        <div class="cont">
+            <h3 class="qno">Hunger</h3><br>
+            <label>
+                A. <input type="radio" name="q16" value="A">Irregular, Any Time
+            </label>
+            <label>
+                B. <input type="radio" name="q16" value="B">Sudden Hunger Pangs, Sharp Hunger
+            </label>
+            <label>
+                C. <input type="radio" name="q16" value="C"> Can Skip any Meal Easily
+            </label>
+        </div>
+
+        <div class="cont">
+            <h3 class="qno">Body Temperature</h3><br>
+            <label>
+                A. <input type="radio" name="q17" value="A"> Less than Normal, Hands and Feet are Cold
+            </label>
+            <label>
+                B. <input type="radio" name="q17" value="B">More than Normal, Face and Forehead Hot
+            </label>
+            <label>
+                C. <input type="radio" name="q17" value="C"> Normal, Hands and Feet Slightly Cold
+            </label>
+        </div>
+
+        <div class="cont">
+            <h3 class="qno">Joints</h3><br>
+            <label>
+                A. <input type="radio" name="q18" value="A"> Weak, Noise on Movement
+            </label>
+            <label>
+                B. <input type="radio" name="q18" value="B">Healthy with Optimal Strength
+            </label>
+            <label>
+                C. <input type="radio" name="q18" value="C"> Heavy Weight Bearing
+            </label>
+        </div>
+
+        <div class="cont">
+            <h3 class="qno">Nature</h3><br>
+            <label>
+                A. <input type="radio" name="q19" value="A"> Fearful, Jealous
+            </label>
+            <label>
+                B. <input type="radio" name="q19" value="B">Egoistic, Fearless
+            </label>
+            <label>
+                C. <input type="radio" name="q19" value="C"> Forgiving, Grateful, Not Greedy
+            </label>
+        </div>
+
+        <div class="cont">
+            <h3 class="qno">Body Energy</h3><br>
+            <label>
+                A. <input type="radio" name="q20" value="A">Becomes Low in Evening, Fatigues After Less Work
+            </label>
+            <label>
+                B. <input type="radio" name="q20" value="B">Moderate, Gets Tired After Medium Work
+            </label>
+            <label>
+                C. <input type="radio" name="q20" value="C">Excellent Energy Throughout Day Not Easily
+            </label>
+        </div>
+
+        <div class="cont">
+            <h3 class="qno">Quality of Voice</h3><br>
+            <label>
+                A. <input type="radio" name="q21" value="A"> Rough with Broken Words
+            </label>
+            <label>
+                B. <input type="radio" name="q21" value="B">Fast, Commanding
+            </label>
+            <label>
+                C. <input type="radio" name="q21" value="C"> Soft and Deep
+            </label>
+        </div>
+        
+        <div class="cont">
+            <h3 class="qno">Dreams</h3><br>
+            <label>
+                A. <input type="radio" name="q22" value="A"> Sky, Wind, Flying Objects and Confusion
+            </label>
+            <label>
+                B. <input type="radio" name="q22" value="B">Fire, Light, Bright Colors, Violence
+            </label>
+            <label>
+                C. <input type="radio" name="q22" value="C"> Water Pools, Gardens and Good Relationships
+            </label>
+        </div>
+        
+        <div class="cont">
+            <h3 class="qno">Social Relations</h3><br>
+            <label>
+                A. <input type="radio" name="q23" value="A">Makes Less Friends Prefers Solitude
+            </label>
+            <label>
+                B. <input type="radio" name="q23" value="B">Good No. of Friends
+            </label>
+            <label>
+                C. <input type="radio" name="q23" value="C"> Loves to Socialize. Relationships are Long Lasting
+            </label>
+        </div>
+        
+        <div class="cont">
+            <h3 class="qno">Wealth</h3><br>
+            <label>
+                A. <input type="radio" name="q24" value="A"> Spends without Thinking Much
+            </label>
+            <label>
+                B. <input type="radio" name="q24" value="B">Saves but Spends on Valuable Things
+            </label>
+            <label>
+                C. <input type="radio" name="q24" value="C"> Prefers More Savings
+            </label>
+        </div>
+        
+        <div class="cont">
+            <h3 class="qno">Bowel Movements</h3><br>
+            <label>
+                A. <input type="radio" name="q25" value="A"> Dry, Hard, Blackish, Scanty Stools
+            </label>
+            <label>
+                B. <input type="radio" name="q25" value="B">Soft, Yellowish, Loose Stools
+            </label>
+            <label>
+                C. <input type="radio" name="q25" value="C"> Heavy, Thick, Sticky Stools
+            </label>
+        </div>
+        
+        <div class="cont">
+            <h3 class="qno">Communication Skills</h3><br>
+            <label>
+                A. <input type="radio" name="q26" value="A"> Fast, Irrelevant Talk, Speech not Clear
+            </label>
+            <label>
+                B. <input type="radio" name="q26" value="B">Good Speaker with Genuine Argumentative Skills
+            </label>
+            <label>
+                C. <input type="radio" name="q26" value="C">Authoritative, Firm and Little Speech
+            </label>
+        </div>
+        
+        <input
+        style="align-: center;"
+        type="submit" value="Submit">
+        
+    </form>
+    <canvas id="chartCanvas"></canvas>
+    
+    <!-- Include your client-side chart rendering script -->
+    <script src="/chart.js"></script>
+</body>
+
+</html>
